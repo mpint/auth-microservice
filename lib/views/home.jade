@@ -1,0 +1,32 @@
+extends ./layout.jade
+
+block vars
+  - var title = 'Home'
+
+block content
+
+  if user
+
+    h2.text-center Welcome Back, #{user.givenName}
+
+  else
+
+    h2.text-center Welcome!
+  hr
+  div.jumbotron
+
+    p.
+      Ready to begin?  Try these Stormpath features provided automatically by Express-Stormpath:
+    ol.lead
+      if user
+        li Registration (Already logged in!)
+        li Login (Already logged in!)
+      else
+        li
+          a(href="/register") Registration
+        li
+          a(href="/login") Login
+      li
+        a(href="/forgot") Forgot Password
+      li
+        a(href="/profile") Custom Profile Data

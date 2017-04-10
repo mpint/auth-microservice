@@ -1,0 +1,6 @@
+node_modules
+*.log
+stormpath.yml
+dump.rdb
+out*
+npm-debug.log

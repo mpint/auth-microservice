@@ -1,0 +1,25 @@
+/**
+ * production server config file
+ * http://pm2.keymetrics.io/docs/usage/application-declaration/#json-javascript
+ */
+{
+  "apps": {
+    "script": "server.js",
+    "name": "stormpath-auth-microservice",
+    "instances": 2,
+    "exec_mode": "cluster",
+    "log_date_format" : "YYYY-MM-DD HH:mm Z",
+    "log_file": "outerr.log",
+    "out_file": "out.log",
+    "err_file": "err.log",
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "env_production": {
+      "NODE_ENV": "production"
+    },
+    "env_ci": {
+      "NODE_ENV": "ci"
+    }
+  }
+}

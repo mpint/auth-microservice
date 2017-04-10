@@ -1,0 +1,45 @@
+{
+  "name": "stormpath-auth-microservice",
+  "version": "0.1.0",
+  "description": "Stormpath web authentication microservice",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm-run-all --parallel server:dev server:redis",
+    "start:inspect": "npm-run-all --parallel server:dev:inspect server:redis",
+    "server:dev": "nodemon server.js",
+    "start:prod": "npm run server:prod",
+    "server:dev:inspect": "node-inspector & npm run server:dev -- --debug",
+    "server:redis": "redis-server",
+    "server:prod": "pm2 start pm2.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpint/stormpath-auth-microservice.git"
+  },
+  "author": "Michael Pinter",
+  "bugs": {
+    "url": "https://github.com/mpint/stormpath-auth-microservice/issues"
+  },
+  "homepage": "https://github.com/mpint/stormpath-auth-microservice",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "express": "^4.13.3",
+    "express-boom": "^1.0.0",
+    "express-stormpath": "^3.x",
+    "helmet": "^3.3.0",
+    "jade": "^1.11.0",
+    "js-base64": "^2.1.9",
+    "lodash": "^4.16.4",
+    "njwt": "^0.3.1",
+    "pm2": "^2.0.18",
+    "redis": "^2.6.2",
+    "stormpath": "0.18.5",
+    "yenv": "^1.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.0"
+  }
+}
